@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ซองทรูมันนี่ (จำลอง)</title>
+  <style>
+    /* รีเซ็ต margin/padding พื้นฐาน */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      padding: 30px;
+      margin: 0 20px;
+    }
+
+    /* ภาพด้านบน */
+    .hero-img {
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto 20px auto;
+      display: block;
+    }
+
+    /* ข้อความหัวเรื่อง */
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 8px;
+    }
+
+    /* ข้อความรอง */
+    .subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* ช่องกรอกเบอร์โทร */
+    .input-label {
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .phone-input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* ข้อความลิงก์เล็กๆ ด้านล่าง */
+    .info-text {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .info-text a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    /* ปุ่มกด */
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #ff7300;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #e66000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- ภาพประกอบ -->
+    <img
+      src="https://gift.truemoney.com/static/img/landing/img_hero.png"
+      alt="TrueMoney Gift"
+      class="hero-img"
+    />
+
+    <!-- ข้อความหัวเรื่อง -->
+    <div class="title">อภินันทนาการ ***</div>
+    <div class="subtitle">ส่งซองทรูมันนี่ให้คุณ</div>
+
+    <!-- ฟอร์มกรอกเบอร์โทร -->
+    <form onsubmit="handleSubmit(event)">
+      <label for="phone" class="input-label">กรอกเบอร์โทรศัพท์เพื่อรับซอง</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="phone-input"
+        pattern="[0-9]{10}"
+        placeholder="08x-xxx-xxxx"
+        required
+      />
+
+      <!-- ข้อความเล็กๆ ใต้ช่องกรอก -->
+      <div class="info-text">
+        หากคุณยังไม่มีบัญชีทรูมันนี่
+        <a href="#" target="_blank">สมัครสมาชิกที่นี่</a><br />
+        <a href="#" target="_blank">ดูรายละเอียดซอง</a>
+      </div>
+
+      <!-- ปุ่มกด -->
+      <button type="submit" class="submit-btn">รับซองเลย</button>
+    </form>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const phoneInput = document.getElementById('phone').value;
+      alert('คุณกรอกเบอร์: ' + phoneInput);
+    }
+  </script>
+
+</body>
+</html>
